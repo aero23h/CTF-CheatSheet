@@ -169,12 +169,21 @@ CTF CheatSheet that I created over time while solving CTFs and learning various 
 
 ## Zip2John and Rar2John
 - Extract hashes from ZIP or RAR files for cracking with John the Ripper.
-- `zip2john <zip file> > <output file>`
-- `rar2john <rar file> > <output file>`
+- `zip2john <zip_file> > <output_file>`
+- `rar2john <rar_file> > <output_file>`
 
 ## Keepass2John
 - To prepare `.kdbx` file for JohnTheRipper
-- `keepass2john datei.kdbx > forjohn.txt`
+- `keepass2john <kdbx_file> > <output.file>`
+
+## Gpg2John
+- `gpg2john <asc_file> > <output_file>`
+
+## GPG
+- `gpg --import <asc_file>`: Imports private-key
+- `gpg --decrypt <pgp_file>`: Decodes `.pgp` file
+- John may be needed to get passphrase to decrypt
+
 
 ## John the Ripper <img src="https://www.kali.org/tools/john/images/john-logo.svg" alt="John Logo" width="40" style="vertical-align:middle;">
 - `john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt`: Crack password hashes.
@@ -321,5 +330,10 @@ CTF CheatSheet that I created over time while solving CTFs and learning various 
 - Scan web servers and web applications for security vulnerabilities.
 - `nikto -h <URL/IP> -p <port>`
 - `nikto -h <URL/IP> -o results.html -Format html`: Performs scan and saves result in html file
+
+## SCP
+- To transfer files/folders between Linux systems.
+- `scp <username>@<remote_IP>:<remote_file/path> <local_directory>`: Copies file/folder from target to attacker. (get)
+- `scp <local_file/path> <username>@<remote_IP>:<remote_directory>`: copies file/folder from attacker to target. (put)
 
 
