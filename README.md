@@ -181,8 +181,10 @@ CTF CheatSheet that I created over time while solving CTFs and learning various 
 
 ## GPG
 - `gpg --import <asc_file>`: Imports private-key
-- `gpg --decrypt <pgp_file>`: Decodes `.pgp` file
+- `gpg --decrypt <pgp_file>`: Decrypts `.pgp` file
 - John may be needed to get passphrase to decrypt
+<!-- TODO: change decode to decrypt -->
+
 
 
 ## John the Ripper <img src="https://www.kali.org/tools/john/images/john-logo.svg" alt="John Logo" width="40" style="vertical-align:middle;">
@@ -325,11 +327,15 @@ CTF CheatSheet that I created over time while solving CTFs and learning various 
 
 ## Search for files
 - `find / -name <filename> 2>/dev/null`
+  - `2>/dev/null` redirects error messages to nowhere.
+- `find / -type -f -name "<keyword>*"`: Finds all files with the keyword at the beginning.
+  - `-f`: Files
+- `find / -type -f -name "*<keyword>*"`: Finds all files with the keyword anywhere.
 
 ## Nikto <img src="https://www.kali.org/tools/nikto/images/nikto-logo.svg" alt="Nikto Logo" width="40" style="vertical-align:middle;">
 - Scan web servers and web applications for security vulnerabilities.
 - `nikto -h <URL/IP> -p <port>`
-- `nikto -h <URL/IP> -o results.html -Format html`: Performs scan and saves result in html file
+- `nikto -h <URL/IP> -o results.html -Format html`: Performs scan and saves result in html file.
 
 ## SCP
 - To transfer files/folders between Linux systems.
