@@ -146,6 +146,13 @@ CTF CheatSheet that I created over time while solving CTFs and learning various 
 - **LinPEAS**: Tool for privilege escalation enumeration on _Linux_ systems.
 - **WinPEAS**: Tool for privilege escalation enumeration on _Windows_ systems.
 
+## GitTools (internetwache) <img src="https://avatars.githubusercontent.com/u/6023785?s=200&v=4" alt="Internetwache Logo" width="40" style="vertical-align:middle;">
+- https://github.com/internetwache/GitTools.git/ 
+- Tool to find/get websites with their .git repository available to the public.
+- `./gitdumper.sh <URL> clone`: To clone the git repository found on website.
+  - e.g. `./gitdumper.sh http://<URL>/.git/ clone`
+- `git log`: To get the commit history.
+- `git show <commit_hash>`: To get specific commit-object.
 
 ## Windows Commands
 - `dir`: Equivalent to `ls`
@@ -183,9 +190,6 @@ CTF CheatSheet that I created over time while solving CTFs and learning various 
 - `gpg --import <asc_file>`: Imports private-key
 - `gpg --decrypt <pgp_file>`: Decrypts `.pgp` file
 - John may be needed to get passphrase to decrypt
-<!-- TODO: change decode to decrypt -->
-
-
 
 ## John the Ripper <img src="https://www.kali.org/tools/john/images/john-logo.svg" alt="John Logo" width="40" style="vertical-align:middle;">
 - `john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt`: Crack password hashes.
