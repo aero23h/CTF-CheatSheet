@@ -293,21 +293,44 @@ escalation when those commands are invoked with higher permissions.
 ## Base64
 - `base64 /etc/shadow | base64 -d`: coded and decoded shadow
 
+## Crunch <img src="https://www.kali.org/tools/crunch/images/crunch-logo.svg" alt="Crunch Logo" width="40" style="vertical-align:middle;">
+- Tool that generates a list of all possible password combinations based on given criteria.
+- `crunch 3 3 0123456789ABCDEF -o 3digits.txt`
+  - `1st 3`: min. length of the generated password
+  - `2nd 3`: max. length of the generated password
+  - `0123456789ABCDEF`: char set to use to generate the passwords
+  - `-o 3digits.txt`: output file
+
+## CeWL <img src="https://www.kali.org/tools/cewl/images/cewl-logo.svg" alt="CeWL Logo" width="40" style="vertical-align:middle;">
+- Custom word list generator tool that spiders websites to create word lists based on the site's content.
+- `cewl <URL> -w output.txt`
+- `-d`: Specify spidering depth
+- `-m`: min. word length
+- `-x`: max. word length
+- `-w`: output file
+
 ## Enum4Linux <img src="https://www.kali.org/tools/enum4linux/images/enum4linux-logo.svg" alt="Enum4Linux Logo" width="40" style="vertical-align:middle;">
 - Gather SMB information from Linux.
 - `enum4linux <options> <IP>`
 
+## Wfuzz <img src="https://www.kali.org/tools/wfuzz/images/wfuzz-logo.svg" alt="Wfuzz Logo" width="50" style="vertical-align:middle;">
+- Tool designed for brute-forcing web applications. Find resources not linked directories, servlets, scripts, etc., 
+brute-force GET and POST parameters for checking different kinds of injections (SQL, XSS, LDAP), brute-force forms parameters (user/password) and fuzzing.
+- `wfuzz -c -z file,usernames.txt -z file,passwords.txt --hs "Please enter the correct credentials" -u http://<IP>/login.php -d "username=FUZZ&password=FUZ2Z"`
+
 ## Hydra <img src="https://www.kali.org/tools/hydra/images/hydra-logo.svg" alt="Hydra Logo" width="50" style="vertical-align:middle;">
 - Brute force attacks for various protocols like SSH, FTP, HTTP, etc.
   - `hydra -t 4 -l <username> -P /usr/share/wordlists/rockyou.txt -vV <IP> ftp`
-  - `hydra -l <username> -P <wordlist> 10.10.0.191 http-post-form "/login:username=^USER^&password=^PASS^:F=incorrect" -V`
+  - `hydra -l <username> -P <wordlist> <IP> http-post-form "/login:username=^USER^&password=^PASS^:F=incorrect" -V`
     - `/login`: Login page
     - `F=incorrect`: Is a string that appears in the server reply when the login fails
     
   - `-t`: Number of threads
-  - `-l`: Username
+  - `-l`: Username ('' if username is blank)
   - `-P`: Path to wordlist
   - `-vV`: Verbose
+  - `-f`: stops Hydra after finding a working password
+  - `-s`: port
 
 ## NFS
 - Mount the directory locally and store the bash file with the SUID bit set (`chmod +s`) as root. 
