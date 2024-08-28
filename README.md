@@ -373,6 +373,12 @@ brute-force GET and POST parameters for checking different kinds of injections (
 - `wpscan --url <URL> -U <username> -P /usr/share/wordlists/rockyou.txt`
 - `-e`: Enumeration
 
+## Whatweb <img src="https://www.kali.org/tools/whatweb/images/whatweb-logo.svg" alt="Whatweb Logo" width="40" style="vertical-align:middle;">
+- Recognises web technologies including content management systems (CMS), blogging platforms, 
+statistic/analytics packages, JavaScript libraries, web servers, and embedded devices.
+- `whatweb <URL>`
+  - `-a <number>`: Sets the aggression level (1-3)
+
 ## Sudo command history
 - `grep 'COMMAND=' /var/log/auth.log`: Shows the sudo command history
 
