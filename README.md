@@ -341,11 +341,18 @@ brute-force GET and POST parameters for checking different kinds of injections (
 - `mysql -h <IP> -U <username> -p`
 - `-p`: Request password
 
-## Hexditor
+## Hexeditor
 - Change file signatures. Helpful, when upload signature is checked.
 - Change the first number of hex characters to a permitted file type.
-  -  Insert number of characters beforehand (e.g. AAAA), which are then changed with Hexditor.
+  -  Insert number of characters beforehand (e.g. AAAA), which are then changed with Hexeditor.
   - https://en.wikipedia.org/wiki/List_of_file_signatures
+
+## PHP alternatives for upload restriction bypass
+- `.php3`
+- `.php4`
+- `.php5`
+- `.phtml`
+- `.phar`
 
 ## Mimikatz <img src="https://www.kali.org/tools/mimikatz/images/mimikatz-logo.svg" alt="MimikatzLogo" width="40" style="vertical-align:middle;">
 - Extract passwords and hashes on Windows.
