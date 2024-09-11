@@ -183,6 +183,11 @@ CTF CheatSheet that I created over time while solving CTFs and learning various 
 - To prepare `.kdbx` file for JohnTheRipper
 - `keepass2john <kdbx_file> > <output.file>`
 
+## Ssh2John
+- Extract hashes from SSH private key files for cracking with John the Ripper.
+  - John the Ripper to crack the passphrase.
+- `ssh2john <id_rsa> > <output_file>`
+
 ## Gpg2John
 - `gpg2john <asc_file> > <output_file>`
 
