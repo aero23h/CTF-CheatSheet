@@ -210,6 +210,11 @@ CTF CheatSheet that I created over time while solving CTFs and learning various 
 - Hide or extract data from image or audio files.
   - `steghide extract -sf picture.jpg`
 
+## Stegseek
+- To bruteforce password for hidden data in image.
+  - Alternative is `stegcracker` (slower)
+- `stegseek <img_file> <wordlist>`
+
 ## Hashid <img src="https://www.kali.org/tools/hashid/images/hashid-logo.svg" alt="Hashid Logo" width="40" style="vertical-align:middle;">
 - Identify the hash type.
   - `hashid <hash>`
